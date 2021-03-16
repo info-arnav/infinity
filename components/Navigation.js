@@ -247,7 +247,7 @@ export default function Navigation(y) {
                   <Links href="/dashboard">New Post</Links>
                 </Dropdown.Item>
                 <Dropdown.Item key="logout">
-                  <a onClick={signOut()}>Logout</a>
+                  <a onClick={() => signOut()}>Logout</a>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
