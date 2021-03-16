@@ -12,7 +12,7 @@ export default function MyApp({ Component, pageProps }) {
         <Navigation></Navigation>
         <main>
           <Component {...pageProps} />
-        </main>
+        </main>{" "}
         <Footer></Footer>
       </Provider>
     </>
