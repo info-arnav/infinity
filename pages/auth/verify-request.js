@@ -13,7 +13,7 @@ export default function Page() {
           <button onClick={() => signIn()}>Sign in</button>
         </>
       )}
-      {session && router.push("dashboard")}
+      {session && router.push("")}
     </>
   );
 }

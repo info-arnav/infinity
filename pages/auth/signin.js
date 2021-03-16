@@ -14,7 +14,7 @@ export default function SignIn({ providers }) {
             </button>
           </div>
         ))}
-      {session && router.push("/dashboard")}
+      {session && router.push("/")}
     </>
   );
 }

@@ -121,7 +121,7 @@ export default function SignIn({ csrfToken }) {
           </div>
         </div>
       )}
-      {session && router.push("/dashboard")}
+      {session && router.push("/")}
     </div>
   );
 }

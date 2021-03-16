@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "../components/Navigation";
 import "../styles/globals.css";
 import "../styles/globals.scss";
+import Footer from "../components/Footer";
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -12,6 +13,7 @@ export default function MyApp({ Component, pageProps }) {
         <main>
           <Component {...pageProps} />
         </main>
+        <Footer></Footer>
       </Provider>
     </>
   );
