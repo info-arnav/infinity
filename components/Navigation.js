@@ -1,7 +1,7 @@
 import { signIn, signOut, useSession, Provider } from "next-auth/client";
 import algoliasearch from "algoliasearch/lite";
 import { InstantSearch, SearchBox } from "react-instantsearch-dom";
-import Links from "next/Link";
+import Links from "next/link";
 import react, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Dropdown, Modal } from "react-bootstrap";
