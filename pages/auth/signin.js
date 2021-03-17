@@ -1,11 +1,22 @@
 import { providers, signIn, useSession, csrfToken } from "next-auth/client";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { Button, Col, Form, Row } from "react-bootstrap";
 
-export default function SignIn({ providers, context }) {
+export default function SignIn({ providers, csrfToken }) {
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
   const [session, loading] = useSession();
   const router = useRouter();
   useEffect(() => {
@@ -79,12 +90,25 @@ export default function SignIn({ providers, context }) {
             Login or Register her to access all features offered by infinity
           </p>
           <br></br>
-          <Form>
+          <Form
+            method="post"
+            action="/api/auth/signin/email"
+            noValidate
+            validated={validated}
+            onSubmit={handleSubmit}
+          >
+            <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="name@example.com" />
+              <Form.Control
+                name="email"
+                type="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
+                required
+                placeholder="name@example.com"
+              />
             </Form.Group>
-            <Button>Send Link</Button>
+            <Button type="submit">Send Link</Button>
           </Form>
           <br></br>
           <center>
