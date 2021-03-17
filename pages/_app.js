@@ -3,9 +3,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "../components/Navigation";
 import "../styles/globals.css";
 import "../styles/globals.scss";
+import { loadProgressBar } from "axios-progress-bar";
+import "nprogress/nprogress.css";
+import NProgress from "nprogress";
 import Footer from "../components/Footer";
 import Head from "next/head";
+import { Router } from "next/router";
 
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+NProgress.configure({ showSpinner: false });
+loadProgressBar();
+Router.events.on("routeChangeError", () => NProgress.done());
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -55,6 +64,7 @@ export default function MyApp({ Component, pageProps }) {
           content="The logo of the website which showcases a symbol of infinity combined to wires"
         />
       </Head>
+
       <Provider session={pageProps.session}>
         <Navigation></Navigation>
         <main>

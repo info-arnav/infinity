@@ -2,6 +2,9 @@ import { signIn, signOut, useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useEffect } from "react";
+import Link from "next/link";
+import { Jumbotron } from "react-bootstrap";
+import Image from "next/image";
 
 export default function Page() {
   const [session, loading] = useSession();
@@ -48,6 +51,22 @@ export default function Page() {
 "
         />
       </Head>
+      <Jumbotron fluid style={{ backgroundColor: "white" }}>
+        <center>
+          <Image src="/mail.svg" width={100} height={200}></Image>
+          <h5>
+            An Email has been sent to the given mail id please click the link
+            there to verify.{" "}
+          </h5>{" "}
+          <br></br>
+          <p>
+            Having issues ?{" "}
+            <Link href="signin" style={{ display: "inline" }}>
+              Click here.
+            </Link>
+          </p>
+        </center>
+      </Jumbotron>
     </>
   );
 }

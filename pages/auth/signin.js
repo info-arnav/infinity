@@ -1,10 +1,11 @@
-import { providers, signIn, useSession } from "next-auth/client";
+import { providers, signIn, useSession, csrfToken } from "next-auth/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import { Button, Col, Form, Row } from "react-bootstrap";
 
-export default function SignIn({ providers }) {
+export default function SignIn({ providers, context }) {
   const [session, loading] = useSession();
   const router = useRouter();
   useEffect(() => {
@@ -40,38 +41,82 @@ export default function SignIn({ providers }) {
         <meta name="twitter:title" content="Infinity | Log In" />
         <meta
           name="description"
-          content="Use various services like Google to logn here.
+          content="Use various services like Google to logn here or simply use your email to get a otp and login.
 "
         />
         <meta
           property="og:description"
-          content="Use various services like Google to logn here.
+          content="Use various services like Google to logn here or simply use your email to get a otp and login.
 "
         />
         <meta
           name="twitter:description"
-          content="Use various services like Google to logn here.
+          content="Use various services like Google to logn here or simply use your email to get a otp and login.
 "
         />
       </Head>
-      {Object.values(providers).map((provider) => (
-        <div key={provider.name}>
-          {provider.name == "Email" && (
-            <Link href="email-signin">Register with Email</Link>
-          )}
-          {provider.name != "Email" && (
-            <button onClick={() => signIn(provider.id)}>
-              Sign in with {provider.name}
-            </button>
-          )}
-        </div>
-      ))}
+      <Row
+        style={{
+          margin: "0px",
+          width: "calc(100% - 30px)",
+          marginLeft: "15px",
+        }}
+      >
+        <Col
+          md={6}
+          style={{
+            height: "700px",
+            backgroundImage: "url(/bg.webp)",
+            backgroundSize: "cover",
+            borderRadius: "20px",
+          }}
+        ></Col>
+        <Col md={6} style={{ borderRadius: "20px" }}>
+          <br></br>
+          <h2>Welcome</h2>
+          <br></br>
+          <p>
+            Login or Register her to access all features offered by infinity
+          </p>
+          <br></br>
+          <Form>
+            <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="name@example.com" />
+            </Form.Group>
+            <Button>Send Link</Button>
+          </Form>
+          <br></br>
+          <center>
+            <h6>OR</h6>
+          </center>
+          <br></br>
+          <center>
+            {Object.values(providers).map((provider) => (
+              <div key={provider.name}>
+                {provider.name != "Email" && (
+                  <button
+                    id={"data"}
+                    style={{ marginBottom: "5px" }}
+                    className="btn btn-4 btn-4c icon-arrow-right"
+                    onClick={() => signIn(provider.id)}
+                  >
+                    Sign in with {provider.name}
+                  </button>
+                )}
+              </div>
+            ))}
+          </center>
+        </Col>
+      </Row>
+      <br></br>
     </>
   );
 }
 
-SignIn.getInitialProps = async () => {
+SignIn.getInitialProps = async (context) => {
   return {
     providers: await providers(),
+    csrfToken: await csrfToken(context),
   };
 };

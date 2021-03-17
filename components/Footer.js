@@ -61,7 +61,12 @@ export default function Footer() {
                   style={{ marginRight: "4px" }}
                 >
                   {" "}
-                  <Image src="/facebook.svg" height="11" width="11px"></Image>
+                  <Image
+                    alt="facebook"
+                    src="/facebook.svg"
+                    height="11"
+                    width="11px"
+                  ></Image>
                 </a>
                 <a
                   className="fa"
@@ -69,7 +74,12 @@ export default function Footer() {
                   style={{ marginRight: "4px" }}
                 >
                   {" "}
-                  <Image src="/instagram.svg" height="11" width="11px"></Image>
+                  <Image
+                    alt="instagram"
+                    src="/instagram.svg"
+                    height="11"
+                    width="11px"
+                  ></Image>
                 </a>
                 <a
                   className="fa"
@@ -78,7 +88,12 @@ export default function Footer() {
                   style={{ marginRight: "4px" }}
                 >
                   {" "}
-                  <Image src="/twitter.svg" height="11" width="11px"></Image>
+                  <Image
+                    alt="twitter"
+                    src="/twitter.svg"
+                    height="11"
+                    width="11px"
+                  ></Image>
                 </a>
                 <a
                   className="fa"
@@ -86,7 +101,12 @@ export default function Footer() {
                   style={{ marginRight: "4px" }}
                 >
                   {" "}
-                  <Image src="/linkedin.svg" height="11" width="11px"></Image>
+                  <Image
+                    alt="linkedin"
+                    src="/linkedin.svg"
+                    height="11"
+                    width="11px"
+                  ></Image>
                 </a>
                 <a
                   className="fa"
@@ -95,6 +115,7 @@ export default function Footer() {
                 >
                   {" "}
                   <Image
+                    alt="youtubeStudio"
                     src="/youtubeStudio.svg"
                     height="11"
                     width="11px"

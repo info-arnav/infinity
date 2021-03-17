@@ -196,27 +196,6 @@ export default function Navigation() {
             <button
               style={{
                 padding: "0",
-                marginLeft: "2px",
-                border: "none",
-                backgroundColor: "transparent",
-              }}
-              onClick={() => router.push("/auth/email-signin")}
-            >
-              <img
-                className="inline"
-                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iMjAwLjAwMDAwMHB0IiBoZWlnaHQ9IjIwMC4wMDAwMDBwdCIgdmlld0JveD0iMCAwIDIwMC4wMDAwMDAgMjAwLjAwMDAwMCIKIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiPgo8bWV0YWRhdGE+CkNyZWF0ZWQgYnkgcG90cmFjZSAxLjE2LCB3cml0dGVuIGJ5IFBldGVyIFNlbGluZ2VyIDIwMDEtMjAxOQo8L21ldGFkYXRhPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwyMDAuMDAwMDAwKSBzY2FsZSgwLjEwMDAwMCwtMC4xMDAwMDApIgpmaWxsPSIjMDAwMDAwIiBzdHJva2U9Im5vbmUiPgo8cGF0aCBkPSJNODA1IDE5MjYgYy0zMTIgLTcyIC01NjEgLTI4MCAtNjc4IC01NjYgLTU2IC0xMzcgLTYyIC0xNzMgLTYyIC0zNjAKMCAtMTg3IDYgLTIyMyA2MiAtMzYwIDYzIC0xNTQgMTg3IC0zMTIgMzE5IC00MDYgNzcgLTU1IDIyNyAtMTI2IDMxOSAtMTUwCjEwMCAtMjcgMzcwIC0yNyA0NzAgMCA4MyAyMiAyMzQgOTAgMzAyIDEzNyAxNjcgMTE0IDI5NyAyOTQgMzY5IDUwOSAyNyA4MCAyOAo5NSAyOSAyNjUgMCAyMDYgLTggMjQ2IC04MSA0MDQgLTU0IDExNiAtMTEyIDE5NyAtMjAwIDI4MiAtODUgODAgLTE0MCAxMTgKLTI0NiAxNjkgLTE0MiA2OSAtMjAyIDgyIC0zODMgODYgLTExMiAyIC0xNzggLTEgLTIyMCAtMTB6IG0zOTUgLTk2IGMyNTEgLTYxCjQ3MiAtMjQ1IDU4MSAtNDg2IDg2IC0xOTAgOTMgLTQ0MCAxOCAtNjQ0IC04MiAtMjIxIC0yNzggLTQxNyAtNDk5IC00OTkgLTE1MgotNTYgLTM0NCAtNjggLTUwMCAtMzEgLTMwNyA3NCAtNTU2IDMyNCAtNjMwIDYzMyAtMjcgMTEzIC0yNyAyODIgMCAzOTcgNzMKMzA0IDMyMyA1NTUgNjI4IDYzMCAxMDkgMjcgMjg5IDI2IDQwMiAweiIvPgo8cGF0aCBkPSJNMTMyMCAxMzc1IGwwIC03NSAtNzUgMCAtNzUgMCAwIC0zNSAwIC0zNSA3NSAwIDc1IDAgMCAtODAgMCAtODAgMzUKMCAzNSAwIDAgODAgMCA4MCA3NSAwIDc1IDAgMCAzNSAwIDM1IC03NSAwIC03NSAwIDAgNzUgMCA3NSAtMzUgMCAtMzUgMCAwCi03NXoiLz4KPHBhdGggZD0iTTgyMiAxMzczIGMtMTU3IC03NyAtOTAgLTM3MyA4NSAtMzczIDEzNyAwIDIyMCAyMDcgMTMzIDMzMSAtNDAgNTYKLTE0OCA3NyAtMjE4IDQyeiIvPgo8cGF0aCBkPSJNNzY0IDkwNiBjLTY3IC0xNiAtMTEwIC00MiAtMTQ4IC04OSAtMjggLTM1IC0zMSAtNDYgLTMxIC0xMDUgbDAKLTY3IDc1IC0zOCBjNDEgLTIwIDk5IC00MiAxMjkgLTQ3IDEyOCAtMjQgMjcwIC00IDM3NiA1MyBsNjAgMzIgMyA1MiBjNSA3OQotMzcgMTQ4IC0xMTMgMTg2IC03NCAzNyAtMjQ3IDQ4IC0zNTEgMjN6Ii8+CjwvZz4KPC9zdmc+Cg=="
-                height="40px"
-                width="40px"
-                style={{
-                  borderRadius: "50%",
-                  marginLeft: "2px",
-                }}
-                alt="signup button represented with an icon"
-              />
-            </button>
-            <button
-              style={{
-                padding: "0",
                 border: "none",
                 marginLeft: "2px",
                 marginRight: "10px",
