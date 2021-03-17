@@ -1,11 +1,18 @@
-import { signIn, signOut, useSession, Provider } from "next-auth/client";
+import {
+  signIn,
+  signOut,
+  useSession,
+  csrfToken,
+  Provider,
+  providers,
+} from "next-auth/client";
 import algoliasearch from "algoliasearch/lite";
 import { InstantSearch, SearchBox } from "react-instantsearch-dom";
 import Links from "next/link";
 import react, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Dropdown, Modal } from "react-bootstrap";
-export default function Navigation(y) {
+export default function Navigation() {
   const router = useRouter();
   const searchClient = algoliasearch(
     "8PCXEU15SU",
@@ -49,7 +56,7 @@ export default function Navigation(y) {
       wfd-id="62"
     >
       {typeof window !== "undefined"
-        ? window.location.pathname === "/allBlogs"
+        ? window.location.pathname === "/blogs"
           ? "Blogs"
           : window.location.pathname === "/about"
           ? "About"
@@ -86,7 +93,7 @@ export default function Navigation(y) {
               </Dropdown.Item>
               {session && (
                 <Dropdown.Item key="blogs">
-                  <Links href="/allBlogs">Blogs</Links>
+                  <Links href="/blogs">Blogs</Links>
                 </Dropdown.Item>
               )}
               {!session && (
@@ -124,7 +131,7 @@ export default function Navigation(y) {
               Home
             </button>
           </Links>
-          {session && (
+          {!session && (
             <Links
               href="/about"
               style={{
@@ -151,9 +158,9 @@ export default function Navigation(y) {
               </button>
             </Links>
           )}
-          {!session && (
+          {session && (
             <Links
-              href="/allBlogs"
+              href="/blogs"
               style={{
                 display: "inherit",
                 marginRight: "10px",
@@ -164,14 +171,14 @@ export default function Navigation(y) {
                 style={{ marginRight: "5px" }}
                 id={
                   typeof window !== "undefined"
-                    ? window.location.pathname === "/allBlogs"
+                    ? window.location.pathname === "/blogs"
                       ? "active"
                       : "data"
                     : "data"
                 }
                 wfd-id="62"
                 onClick={() => {
-                  router.push("/allBlogs");
+                  router.push("/blogs");
                 }}
               >
                 Blogs
@@ -219,7 +226,7 @@ export default function Navigation(y) {
               <img
                 className="inline"
                 onClick={() => {
-                  signIn();
+                  router.push("/auth/signin");
                 }}
                 src="data:image/png;base64,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"
                 height="40px"
