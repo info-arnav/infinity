@@ -83,13 +83,15 @@ export default function SignIn({ providers, csrfToken }) {
           }}
         ></Col>
         <Col md={6} style={{ borderRadius: "20px" }}>
-          <br></br>
-          <h2>Welcome</h2>
-          <br></br>
-          <p>
-            Login or Register her to access all features offered by infinity
-          </p>
-          <br></br>
+          <center>
+            <br></br>
+            <h2>Welcome</h2>
+            <br></br>
+            <p>
+              Login or Register her to access all features offered by infinity
+            </p>
+            <br></br>
+          </center>
           <Form
             method="post"
             action="/api/auth/signin/email"
@@ -108,7 +110,9 @@ export default function SignIn({ providers, csrfToken }) {
                 placeholder="name@example.com"
               />
             </Form.Group>
-            <Button type="submit">Send Link</Button>
+            <Button style={{ width: "100%" }} type="submit">
+              Send Link
+            </Button>
           </Form>
           <br></br>
           <center>

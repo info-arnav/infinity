@@ -47,7 +47,7 @@ export default function MyApp({ Component, pageProps }) {
           alt="The logo of the website which showcases a symbol of infinity combined to wires"
         />
         <meta property="og:site_name" content={"Infinity"} />
-        <meta property="fb:app_id" content="807904256677081" />
+        <meta property="fb:app_id" content="478626783320499" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary" key="twitterc" />
