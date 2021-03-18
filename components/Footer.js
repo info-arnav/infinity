@@ -14,13 +14,13 @@ export default function Footer() {
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   return (
-    <footer id="footer" class="footer-1">
-      <div class="main-footer widgets-dark typo-light">
-        <div class="" style={{ marginRight: "20px", marginLeft: "20px" }}>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="widget subscribe no-box">
-                <h5 class="widget-title">
+    <footer id="footer" className="footer-1">
+      <div className="main-footer widgets-dark typo-light">
+        <div className="" style={{ marginRight: "20px", marginLeft: "20px" }}>
+          <div className="row">
+            <div className="col-xs-12 col-sm-6 col-md-3">
+              <div className="widget subscribe no-box">
+                <h5 className="widget-title">
                   Infinity<span></span>
                 </h5>
                 <p>
@@ -34,12 +34,12 @@ export default function Footer() {
               </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="widget no-box">
-                <h5 class="widget-title">
+            <div className="col-xs-12 col-sm-6 col-md-3">
+              <div className="widget no-box">
+                <h5 className="widget-title">
                   Quick Links<span></span>
                 </h5>
-                <ul class="thumbnail-widget">
+                <ul className="thumbnail-widget">
                   <li>
                     <a href="#.">&nbsp;Top Leaders</a>
                   </li>
@@ -50,9 +50,9 @@ export default function Footer() {
               </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="widget no-box">
-                <h5 class="widget-title">
+            <div className="col-xs-12 col-sm-6 col-md-3">
+              <div className="widget no-box">
+                <h5 className="widget-title">
                   Follow up<span></span>
                 </h5>
                 <a
@@ -126,14 +126,14 @@ export default function Footer() {
             <br />
             <br />
 
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="widget no-box">
-                <h5 class="widget-title">
+            <div className="col-xs-12 col-sm-6 col-md-3">
+              <div className="widget no-box">
+                <h5 className="widget-title">
                   Contact Us<span></span>
                 </h5>
                 <p>Wanna ask something? Send a message here.</p>
                 <br></br>
-                <form class="emailfield" onSubmit={handleMessage}>
+                <form className="emailfield" onSubmit={handleMessage}>
                   <input
                     type="text"
                     name="message"
@@ -151,7 +151,7 @@ export default function Footer() {
                     onChange={(e) => setMessage(e.target.value)}
                   />
                   <input
-                    class="submitbutton ripplelink"
+                    className="submitbutton ripplelink"
                     type="submit"
                     value="Send Message"
                   />
@@ -162,10 +162,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <div class="footer-copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
+      <div className="footer-copyright">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 text-center">
               <p>Copyright Infinity @ 2021. All rights reserved.</p>
             </div>
           </div>

@@ -47,7 +47,11 @@ export default NextAuth({
   },
   pages: {
     signIn: "/auth/signin",
+    error: "/auth/error/signin",
     verifyRequest: "/auth/verify-request",
     newUser: null,
+  },
+  events: {
+    async error(message) {},
   },
 });

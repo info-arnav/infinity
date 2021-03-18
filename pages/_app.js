@@ -65,7 +65,10 @@ export default function MyApp({ Component, pageProps }) {
         />
       </Head>
 
-      <Provider session={pageProps.session}>
+      <Provider
+        session={pageProps.session}
+        options={{ site: process.env.SITE }}
+      >
         <Navigation></Navigation>
         <main>
           <Component {...pageProps} />
